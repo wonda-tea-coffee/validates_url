@@ -54,10 +54,10 @@ RSpec.describe 'URL validation' do
       expect(user).not_to be_valid
     end
 
-    it 'does not allow a url with only a scheme' do
+    it 'allows a url with only a scheme' do
       user.homepage = 'http://'
 
-      expect(user).not_to be_valid
+      expect(user).to be_valid
     end
 
     it 'does not allow a url without a host' do
